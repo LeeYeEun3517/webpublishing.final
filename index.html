@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Martel:wght@300;400&family=Noto+Sans+KR:wght@100;300;400;700&family=Orbitron&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        :root{
+            --main-color:#00042B;
+            --text-color:#5B5B5B;
+        }
+        /* 헤더 */
+        header {
+            /* background-color: burlywood; */
+            display: flex;
+            height: 100px;
+            justify-content: space-between;
+            flex: 1;
+            align-items: center;
+            padding: 0px 160px 0px 160px;
+        }
+        header a .logo{
+            font-family: 'Orbitron', sans-serif;
+            font-size: 36px;
+            color: var(--main-color);
+        }
+        header a{
+            text-decoration: none;
+        }
+        .list{
+            display: flex;
+            gap: 72px;
+        }
+        .list a{
+            list-style: none;
+            text-decoration: none;
+            color: #6F6F6F;
+            font-size: 20px;
+            transition: 0.6s all ease;
+        }
+        .list a:hover{
+            color: var(--main-color);
+        }
+        .lan{
+            display: flex;
+            gap: 36px;
+        }
+        .lan a{
+            list-style: none;
+            text-decoration: none;
+            font-size: 18px;
+            color: var(--text-color);
+        }
+        .lan a:last-child{
+            color: #989898;
+        }
+        .lan a:last-child:hover{
+            color: var(--text-color);
+        }
+    
+        /* 배너 */
+        #banner{
+            width: 100%;
+            height: 640px;
+        }
+        #banner img{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .bannertext{
+            margin-left: 240px;
+            color: white;
+            font-weight: 100;
+        }
+        .bannertext h3{
+            position:absolute;
+            font-family: 'Orbitron', sans-serif;
+            top: 370px;
+            font-size: 28px;
+            font-weight: 400;
+        }
+        .bannertext h2{
+            position:absolute;
+            font-family: 'Orbitron', sans-serif;
+            top: 410px;
+            font-size: 72px;
+            font-weight: 400;
+        }
+        .bannertext p{
+            position: absolute;
+            top: 560px;
+            font-size: 18px;
+            line-height: 32px;
+        }
+    
+        /* about */
+        #about{
+            display: flex;
+            /* background-color: #989898; */
+            height: 824px;
+            align-items: center;
+            justify-content: center;
+            gap: 160px;
+        }
+        .abouttext{
+            text-align: right;
+            justify-content: right;
+            color: var(--text-color);
+        }
+        .abouttext h1{
+            font-size: 32px;
+            color: var(--main-color);
+            margin-bottom: 40px;
+        }
+        .abouttext h2{
+            font-size: 20px;
+            line-height: 40px;
+            margin-bottom: 44px;
+            font-weight: 400;
+        }
+        #about .more {
+            display: inline-block;
+            border: 1px var(--text-color) solid;
+        }
+        #about .more a{
+            display: flex;
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 12px 20px;
+            align-items: center;
+            font-size: 16px;
+            line-height: 36px;
+        }
+        #about .more img{
+            width: 20px;
+            height: 20px;
+            margin-left: 8px;
+        }
+        .aboutimg img{
+            height: 417px;
+            width: 656px;
+        }
+    
+        /* In Progress */
+        #progress{
+            background-color: #F9F9F9;
+            height: 778px;
+            padding: 100px 240px 140px 240px;
+        }
+        .pgcontents{
+            display: flex;
+            justify-content: space-between;
+        }
+        .pgcontent{
+            position: relative;
+            margin-top: 80px;
+            width: 335px;
+            height: 422px;
+        }
+        .pghover:hover{
+            opacity: 1;
+        }
+        .pghover{
+            transition: 0.6s all ease;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            text-align: center;
+            top: 0;
+            left: 0;
+            color: white;
+            justify-content: space-between;
+        }
+        .pghover h2{
+            font-size: 18px;
+            line-height: 32px;
+            font-weight: 200;
+            margin-top: 64px;
+            margin-bottom: 60px;
+        }
+        .pghover p{
+            font-size: 14px;
+            font-weight: 200;
+        }
+        .pghover h1{
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+        .pghover .more img{
+            width: 10px;
+            height: 20px;
+            margin-left: 8px;
+            padding-top: 4px;
+        }
+        .pghover .more{
+            display: flex;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            align-items: center;
+            margin-top: 60px;
+        }
+        .pghover .more p{
+            font-size: 24px;
+            font-weight: 300;
+        }
+        .pgcontent img{
+            width: 100%;
+            height: 100%;
+        }
+        .pgtext{
+            display: flex;
+            text-align: center;
+            justify-content: space-between;
+        }
+        .pgtext h1{
+            font-size: 32px;
+            color: var(--main-color);
+        }
+        .pgtext .more {
+            display: inline-block;
+        }
+        .pgtext .more a{
+            display: flex;
+            color: var(--text-color);
+            text-decoration: none;
+            padding-top: 10px;
+            align-items: center;
+            font-size: 16px;
+        }
+        .pgtext .more img{
+            width: 20px;
+            height: 20px;
+            margin-left: 8px;
+        }
+    
+        /* bestworks */
+        .bwmore {
+            display: inline-block;
+            border: 1px var(--text-color) solid;
+            margin-top: 100px;
+        }
+        .bwmore a{
+            display: flex;
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            line-height: 36px;
+            align-items: center;
+        }
+        .bwmore img{
+            width: 20px;
+            height: 20px;
+            margin-left: 8px;
+        }
+        #bestworks{
+            /* background-color: aquamarine; */
+            height: 1600px;
+            padding: 160px 240px 160px 240px;
+            text-align: center;
+        }
+        .bwimgs{
+            width: 1440px;
+            height: 980px;
+            /* background-color: #00042B; */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .bwimgbox1{
+            width: 100%;
+            height: 480px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .bwimgbox2{
+            width: 100%;
+            height: 480px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            position: relative;
+            margin-top: 20px;
+        }
+        .bwimgs .bwimg1 img{
+            height: 480px;
+            width: 940px;
+        }
+        .bwimgs .bwimg2 img{
+            height: 480px;
+            width: 480px;
+        }
+        .bwimgs .bwimg3 img{
+            height: 480px;
+            width: 480px;
+            position: relative;
+        }
+        .bwimgs .bwimg4 img{
+            height: 480px;
+            width: 940px;
+        }
+        .bwtitle h1{
+            margin-bottom: 100px;
+            font-size: 32px;
+            color: var(--main-color);
+            text-align: center;
+        }
+        .bwhover1:hover{
+            opacity: 1;
+            box-shadow: 0 0 13px 1px rgb(77, 77, 77);
+        }
+        .bwhover2:hover{
+            opacity: 1;
+            box-shadow: 0 0 13px 1px rgb(77, 77, 77);
+        }
+        .bwhover3:hover{
+            opacity: 1;
+            box-shadow: 0 0 13px 1px rgb(77, 77, 77);
+        }
+        .bwhover4:hover{
+            opacity: 1;
+            box-shadow: 0 0 13px 1px rgb(77, 77, 77); 
+        }
+        .bwhover1{
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.6);
+            top: 0;
+            left: 0;
+            width: 940px;
+            height: 480px;
+            padding: 80px;
+            opacity: 0;
+            transition: 0.6s all ease;
+        }
+        .bwhover2{
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.6);
+            top: 0;
+            left: 600;
+            width: 480px;
+            height: 480px;
+            padding: 80px;
+            opacity: 0;
+            transition: 0.6s all ease;
+        }
+        .bwhover3{
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            width: 480px;
+            height: 480px;
+            padding: 80px;
+            transition: 0.6s all ease;
+            top: 0;
+        }
+        .bwhover4{
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            width: 940px;
+            height: 480px;
+            padding: 80px;
+            transition: 0.6s all ease;
+            top: 0;
+        }
+        .bwhovertext{
+            flex-direction: column;
+            text-align: left;
+            color: white;
+        }
+        .bwhovertext p{
+            font-size: 20px;
+            line-height: 36px;
+            font-weight: 100;
+        }
+        .bwhovertext h2{
+            font-size: 20px;
+            line-height: 36px;
+            margin-top: 160px;
+            margin-bottom: 12px;
+            font-weight: 100;
+        }
+        .bwhovertext h1{
+            font-size: 36px;
+            line-height: 44px;
+            font-weight: 600;
+        }
+        /* upcoming */
+        #upcoming{
+            background-color: #F9F9F9;
+            height: 783px;
+            padding: 100px 240px 160px 240px;
+        }
+        .uctext h1{
+            font-size: 32px;
+            color: var(--main-color);
+        }
+        .uctext{
+            margin-bottom: 80px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .ucitems{
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+        .ucitem a img{
+            width: 453px;
+            height: 280px;
+        }
+        .uctext img{
+            width: 20px;
+            height: 20px;
+            margin-left: 8px;
+        }
+        .uctext p{
+            font-size: 16px;
+            font-weight: 300;
+            text-decoration: none;
+        }
+        .ucmore {
+            display: inline-block;
+        }
+        .ucmore a{
+            display: flex;
+            color: var(--text-color);
+            text-decoration: none;
+            padding-top: 10px;
+            align-items: center;
+        }
+        .ucmore p{
+            font-weight: 400;
+        }
+        .ucitem a{
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        .ucitem a h3{
+            font-weight: 300;
+            margin-top: 10px;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+        .ucitem a p{
+            font-size: 16px;
+            font-weight: 300;
+        }
+        .ucitem a h2{
+            color: var(--main-color);
+            font-size: 22px;
+            line-height: 36px;
+            margin-top: 20px;
+            font-weight: 500;
+        }
+
+        /* 푸터 */
+        footer{
+            background-color: #3D3D3D;
+        }
+        .footerbox{
+            padding: 60px 0px 60px 0px;
+            text-align: center;
+            color: white;
+        }
+        .footerbox h1{
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
+            font-weight: 100;
+            margin-bottom: 28px;
+        }
+        .ftext ul{
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+        }
+        .ftext ul a{
+            text-decoration: none;
+        }
+        .ftext ul a li{
+            list-style: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 100;
+        }
+        .ficons ul{
+            margin-top: 36px;
+            margin-bottom: 28px;
+            display: flex;
+            gap: 36px;
+            justify-content: center;
+        }
+        .ficons ul a{
+            text-decoration: none;
+        }
+        .ficons ul a li{
+            list-style: none;
+        }
+        .copyright p{
+            font-size: 14px;
+            font-weight: 100;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <header>
+        <a href="index.html">
+            <h1 class="logo">Grabition</h1>
+        </a>
+        <ul class="list">
+            <a href="progress.html"><li>IN PROGRESS</li></a>
+            <a href="about.html"><li>ABOUT</li></a>
+            <a href="works.html"><li>WORKS</li></a>
+            <a href="schedule.html"><li>SCHEDULE</li></a>
+        </ul>
+        <ul class="lan">
+            <a href="#"><li>KOR</li></a>
+            <a href="#"><li>&#124;</li></a>
+            <a href="#"><li>ENG</li></a>
+        </ul>
+    </header>
+    
+    <div id="banner">
+            <img src="img/01.png">
+            <div class="bannertext">
+                <h3>Graduation Exhibition</h3>
+                <h2>Grabition</h2>
+                <p>사용자들이 더 쉽고, 간편하게 졸업 전시회 정보를 습득하도록 하는<br> 
+                    졸업 전시 홍보 웹사이트입니다.</p>
+            </div>
+    </div>
+
+    <div id="about">
+        <div class="abouttext">
+            <h1>About Grabition</h1>
+            <h2>저희 웹사이트는 인서울 대학교를 중심으로<br>
+                디자인 관련 졸업 전시회를 모아둔 사이트입니다.<br>
+                각 디자인 분야로 나뉘어져 있어 원하는 분야를 선택하여<br>
+                타 대학교의 졸업 전시회를 간편하게 찾아볼 수 있습니다.<br>
+                타 대학교 졸업 전시회를 보면서 안목을 기를 수 있으며,<br>
+                졸업 전시회를 준비하는 학생들은 이 웹사이트를 참고하여<br>
+                더 나은 작품을 만드는데 도움 받을 수도 있습니다.</h2>
+            <div class="more">
+                <a href="about.html">
+                    <p>VIEW MORE</p>
+                    <img src="img/more.png">
+                </a>
+            </div>
+        </div>
+        <div class="aboutimg">
+            <img src="img/02.png">
+        </div>
+    </div>
+
+    <div id="progress">
+        <div class="pgbox">
+            <div class="pgtext">
+                <h1>In Progress</h1>
+                <div class="more">
+                    <a href="progress.html">
+                        <p>VIEW MORE</p>
+                        <img src="img/more.png">
+                    </a>
+                </div>
+            </div>
+            <div class="pgcontents">
+                <a href="#">
+                    <div class="pgcontent">
+                        <img src="img/03.png">
+                        <div class="pghover">
+                            <h2>국민대<br>
+                                입체미술 전공 졸업 전시</h2>
+                            <h1>Backing Baking</h1>
+                            <p>2022.11.10 - 11.23</p>
+                            <div class="more">
+                                <p>더보기</p>
+                                <img src="img/more2.png">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="pgcontent">
+                        <img src="img/04.png">
+                        <div class="pghover">
+                            <h2>경희대<br>
+                                도예학과 제 52회 졸업 전시</h2>
+                            <h1>Silhouette</h1>
+                            <p>2022.11.20 - 12.01</p>
+                            <div class="more">
+                                <p>더보기</p>
+                                <img src="img/more2.png">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="pgcontent">
+                        <img src="img/05.png">
+                        <div class="pghover">
+                            <h2>성신여대<br>
+                                조소과 졸업 전시</h2>
+                            <h1>조립 彫立</h1>
+                            <p>2022.11.30 - 12.05</p>
+                            <div class="more">
+                                <p>더보기</p>
+                                <img src="img/more2.png">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="pgcontent">
+                        <img src="img/06.png">
+                        <div class="pghover">
+                            <h2>이화여대<br>
+                            2022 섬유예술 졸업 전시</h2>
+                            <h1>WRAP (it) UP</h1>
+                            <p>2022.11.22 - 11.27</p>
+                            <div class="more">
+                                <p>더보기</p>
+                                <img src="img/more2.png">
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="bestworks">
+        <div class="bwbox">
+            <div class="bwtitle">
+                <h1>2021 Best Works</h1>
+            </div>
+            <div class="bwimgs">
+                <div class="bwimgbox1">
+                    <div class="bwimg1">
+                        <a href="#">
+                            <img src="img/07.png">
+                            <div class="bwhover1">
+                                <div class="bwhovertext">
+                                    <div class="bwhoverup">
+                                        <p>경희대<br>시각디자인과</p>
+                                    </div>
+                                    <div class="bwhoverdown">
+                                        <h2>변규리 Kyuri Byeon</h2>
+                                        <h1>CONNEXION</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bwimg2">
+                        <a href="#">
+                            <img src="img/08.png">
+                            <div class="bwhover2">
+                                <div class="bwhovertext">
+                                    <div class="bwhoverup">
+                                        <p>한양대<br>엔터테인먼트학디자인과</p>
+                                    </div>
+                                    <div class="bwhoverdown">
+                                        <h2>이령아 Ryeong ah Lee</h2>
+                                        <h1>Dime</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="bwimgbox2">
+                    <div class="bwimg3">
+                        <a href="#">
+                            <img src="img/09.png">
+                            <div class="bwhover3">
+                                <div class="bwhovertext">
+                                    <div class="bwhoverup">
+                                        <p>한국예술종합학교<br>디자인과</p>
+                                    </div>
+                                    <div class="bwhoverdown">
+                                        <h2>박지현 Ji hyeon Park</h2>
+                                        <h1>그로우톡</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bwimg4">
+                        <a href="#">
+                            <img src="img/10.png">
+                            <div class="bwhover4">
+                                <div class="bwhovertext">
+                                    <div class="bwhoverup">
+                                        <p>가천대<br>시각디자인과</p>
+                                    </div>
+                                    <div class="bwhoverdown">
+                                        <h2>임승아 Lim Seung Ah</h2>
+                                        <h1>murmur</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="bwmore">
+                <a href="works.html">
+                    <p>VIEW MORE</p>
+                    <img src="img/more.png">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="upcoming">
+            <div class="uctext">
+                <h1>An Upcoming Exhibition</h1>
+                    <div class="ucmore">
+                    <a href="schedule.html">
+                        <p>VIEW MORE</p>
+                        <img src="img/more.png">
+                    </a>
+                </div>
+            </div>
+            <div class="ucitems">
+                <div class="ucitem">
+                    <a href="#">
+                        <img src="img/11.png">
+                        <h2>MUTANT</h2>
+                        <h3>경희대대학교 디지털콘텐츠학과</h3>
+                        <p>2022.12.07 (수) - 2022.12.12 (월)</p>
+                    </a>
+                </div>
+                <div class="ucitem">
+                    <a href="#">
+                        <img src="img/12.png">
+                        <h2>X10D</h2>
+                        <h3>가톨릭대학교 디지털디자인과</h3>
+                        <p>2022.11.30 (수) - 2022.12.03 (토)</p>
+                    </a>
+                </div>
+                <div class="ucitem">
+                    <a href="#">
+                        <img src="img/13.png">
+                        <h2>The Time, The Place.</h2>
+                        <h3>동아대학교 공예학과</h3>
+                        <p>2022.12.01 (목) - 2022.12.05 (월)</p>
+                    </a>
+                </div>
+            </div>
+    </div>
+
+    <footer>
+        <div class="footerbox">
+            <h1>Grabition</h1>
+            <div class="ftext">
+                <ul>
+                    <a href="#">
+                        <li>About</li>
+                    </a>
+                    <a href="#">
+                        <li>Contact</li>
+                    </a>
+                    <a href="#">
+                        <li>Support</li>
+                    </a>
+                    <a href="#">
+                        <li>Quick Links</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="ficons">
+                <ul>
+                    <a href="#">
+                        <li><img src="img/f1.png"></li>
+                    </a>
+                    <a href="#">
+                        <li><img src="img/f2.png"></li>
+                    </a>
+                    <a href="#">
+                        <li><img src="img/f3.png"></li>
+                    </a>
+                    <a href="#">
+                        <li><img src="img/f4.png"></li>
+                    </a>
+                    <a href="#">
+                        <li><img src="img/f5.png"></li>
+                    </a>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>©Copyright.All rights reserved.</p>
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>

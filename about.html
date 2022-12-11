@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Martel:wght@300;400&family=Noto+Sans+KR:wght@100;300;400;700&family=Orbitron&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        :root{
+            --main-color:#00042B;
+            --text-color:#5B5B5B;
+        }
+        /* 헤더 */
+        header {
+            display: flex;
+            height: 100px;
+            justify-content: space-between;
+            flex: 1;
+            align-items: center;
+            padding: 0px 160px 0px 160px;
+        }
+        header a .logo{
+            font-family: 'Orbitron', sans-serif;
+            font-size: 36px;
+            color: var(--main-color);
+        }
+        header a{
+            text-decoration: none;
+        }
+        .list{
+            display: flex;
+            gap: 72px;
+        }
+        .list a{
+            list-style: none;
+            text-decoration: none;
+            color: #6F6F6F;
+            transition: 0.6s all ease;
+            font-size: 20px;
+        }
+        .list a:hover{
+            color: var(--main-color);
+        }
+        .lan{
+            display: flex;
+            gap: 36px;
+        }
+        .lan a{
+            list-style: none;
+            text-decoration: none;
+            font-size: 18px;
+            color: var(--text-color);
+        }
+        .lan a:last-child{
+            color: #989898;
+        }
+        .lan a:last-child:hover{
+            color: var(--text-color);
+        }
+    
+        /* 배너 */
+        #banner{
+            width: 100%;
+            height: 640px;
+        }
+        #banner img{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .bannertext{
+            margin-left: 240px;
+            color: white;
+            font-weight: 100;
+        }
+        .bannertext h2{
+            position:absolute;
+            font-family: 'Martel', serif;
+            top: 240px;
+            font-size: 52px;
+            font-weight: 300;
+        }
+        .bannertext p{
+            position: absolute;
+            top: 332px;
+            font-size: 18px;
+            line-height: 32px;
+        }
+
+        /* 기획배경 */
+        .bgitems{
+            display: flex;
+            justify-content: center;
+        }
+        #background{
+            height: 972px;
+            padding: 160px 0px 0px 0px;
+            text-align: center;
+            /* background-color: #ffc2c2; */
+        }
+        .bgitem{
+            height: 381px;
+            width: 520px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .bgtext{
+            text-align: center;
+        }
+        .bgtext h1{
+            font-size: 32px;
+            color: var(--main-color);
+        }
+        .bgtext hr{
+            height: 0.6px;
+            color: var(--main-color);
+            border: 0;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 36px;
+            margin-bottom: 36px;
+        }
+        .bgtext p{
+            font-size: 20px;
+            color: #3D3D3D;
+            margin-bottom: 100px;
+        }
+        .bgt{
+            width: 400px;
+        }
+        .bgt h2{
+            margin-bottom: 32px;
+            font-size: 28px;
+            color: var(--main-color);
+            font-weight: 400;
+        }
+        .bgt p{
+            font-size: 18px;
+            line-height: 32px;
+            color: var(--text-color);
+        }
+        .bgitem img{
+            margin-top: auto;
+            width: 360px;
+        }
+        .bgitem:not(:first-child){
+            border-left: 1px solid #bbbbbb;
+        }
+
+        /* info */
+        #info{
+            height: 606px;
+            background-color: #F5F6F8;
+        }
+        .infobox{
+            display: flex;
+        }
+        .infotext{
+            padding: 100px 0px 0px 120px;
+            height: 606px;
+        }
+        .infotext h1{
+            font-size: 32px;
+            line-height: 48px;
+            color: var(--main-color);
+        }
+        .infotext hr{
+            height: 0.6px;
+            color: var(--main-color);
+            border: 0;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        .infotext p{
+            font-size: 20px;
+            line-height: 32px;
+            color: var(--text-color);
+        }
+        .infobox img{
+            height: 100%;
+        }
+        .infoimg{
+            height: 606px;
+        }
+
+        /* 서비스 */
+        #service{
+            padding: 160px 0px 200px 0px;
+            text-align: center;
+        }
+        .sitems{
+            display: flex;
+            /* margin-left: 240px;
+            margin-right: 240px; */
+            gap: 100px;
+            justify-content: center;
+            margin-top: 100px;
+        }
+        .sitem img{
+            width: 108px;
+            height: 108px;
+            margin-top: 70px;
+        }
+        .sitem{
+            width: 413px;
+            height: 413px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        .stext hr{
+            height: 0.6px;
+            color: var(--main-color);
+            border: 0;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 36px;
+            margin-bottom: 36px;
+        }
+        .stext h1{
+            font-size: 32px;
+            line-height: 36px;
+            color: var(--main-color);
+        }
+        .stext p{
+            font-size: 20px;
+            color: #3D3D3D;
+        }
+        .sitem h2{
+            margin-top: 24px;
+            margin-bottom: 24px;
+            font-size: 28px;
+            list-style: 36px;
+            color: var(--main-color);
+        }
+        .sitem p{
+            color: var(--text-color);
+            font-size: 18px;
+            line-height: 28px;
+        }
+
+        /* 푸터 */
+        footer{
+            background-color: #3D3D3D;
+        }
+        .footerbox{
+            padding: 60px 0px 60px 0px;
+            text-align: center;
+            color: white;
+        }
+        .footerbox h1{
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
+            font-weight: 100;
+            margin-bottom: 28px;
+        }
+        .ftext ul{
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+        }
+        .ftext ul a{
+            text-decoration: none;
+        }
+        .ftext ul a li{
+            list-style: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 100;
+        }
+        .ficons ul{
+            margin-top: 36px;
+            margin-bottom: 28px;
+            display: flex;
+            gap: 36px;
+            justify-content: center;
+        }
+        .ficons ul a{
+            text-decoration: none;
+        }
+        .ficons ul a li{
+            list-style: none;
+        }
+        .copyright p{
+            font-size: 14px;
+            font-weight: 100;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <h1 class="logo">Grabition</h1>
+        </a>
+        <ul class="list">
+            <a href="progress.html"><li>IN PROGRESS</li></a>
+            <a href="about.html"><li>ABOUT</li></a>
+            <a href="works.html"><li>WORKS</li></a>
+            <a href="schedule.html"><li>SCHEDULE</li></a>
+        </ul>
+        <ul class="lan">
+            <a href="#"><li>KOR</li></a>
+            <a href="#"><li>&#124;</li></a>
+            <a href="#"><li>ENG</li></a>
+        </ul>
+    </header>
+    
+    <div id="banner">
+            <img src="img/14.png">
+            <div class="bannertext">
+                <h2>About Grabition</h2>
+                <p>사용자들에게 편리함을 제공하는 졸업 전시 홍보 웹사이트,<Br>
+                    Grabition의 기획 배경과 웹사이트 설명 및 서비스에 대해 소개합니다.</p>
+            </div>
+    </div>
+
+    <div id="background">
+        <div class="bgtext">
+            <h1>Planning Background</h1>
+            <hr width="60px" color="#00042B">
+            <p>사용자들이 더 쉽고, 간편하게 졸업 전시회 정보를 습득하게 합니다.</p>
+        </div>
+        <div class="bgitems">
+            <div class="bgitem">
+                <div class="bgt">
+                    <h2>01</h2>
+                    <p>학생들이 타 대학교 졸업 전시회를 보면서<br>
+                        디자인 안목을 기를 수 있습니다.</p>
+                </div>
+                <img src="img/15.png">
+            </div>
+            <div class="bgitem">
+                <div class="bgt">
+                <h2>02</h2>
+                <p>졸업 전시회를 준비하는 학생들이 이 웹사이트를<br>
+                    통해 작품에 참고할 수 있습니다.</p>
+                </div>
+                <img src="img/16.png">
+            </div>
+            <div class="bgitem">
+                <div class="bgt">
+                <h2>03</h2>
+                <p>학교마다 일일이 졸업 전시회를<br>
+                    찾아봐야 하는 불편함을 해소합니다.</p>
+                </div>
+                <img src="img/17.png">
+            </div>
+        </div>
+    </div>
+
+    <div id="info">
+        <div class="infobox">
+            <div class="infoimg">
+                <img src="img/18.png">
+            </div>
+            <div class="infotext">
+                <h1>Graduation Exhibition<br>
+                    Promotion Website</h1>
+                <hr width="60px" color="#00042B">
+                <p>대부분의 디자인학과 졸업 예비생들은 4학년 시작과 동시에<br>
+                    졸업 작품을 위해 달립니다.<br>
+                    <br>
+                    졸업 전시는 대학생들에게 대학 생활을 마무리한다는 의미와<br>
+                    1년이라는 긴 시간의 노력이 들어가는 작품이며,<br>
+                    4년의 대학 생활을 마침표 찍는 일이자<br>
+                    동시에 사회로 나가는 새로운 시작을 의미합니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="service">
+        <div class="sbox">
+            <div class="stext">
+                <h1>Our Services</h1>
+                <hr width="60px" color="#00042B">
+                <p><span style="font-family: 'Orbitron', sans-serif;">Grabition</span> 에서 제공하는 세가지 서비스를 소개합니다.</p>
+            </div>
+            <div class="sitems">
+                <div class="sitem">
+                    <img src="img/19.png">
+                    <h2>In Progress</h2>
+                    <p>졸업 전시회가 진행 중인 학교를 소개합니다.<br> 
+                        졸업 전시회 관련 사진, 영상, 시간, 장소 등의<br>
+                        다양한 정보를 제공합니다.</p>
+                </div>
+                <div class="sitem">
+                    <img src="img/20.png">
+                    <h2>Schedule</h2>
+                    <p>졸업 전시회 예정 학교를 소개합니다.<br>
+                        현재 진행 중인 전시회가 아닌 곧 다가오는<br>
+                        졸업 전시회 관련 정보 및 일정을 제공합니다.</p>
+                </div>
+                <div class="sitem">
+                    <img src="img/21.png">
+                    <h2>Works</h2>
+                    <p>2021년부터 년도별 우수작을 소개합니다.<br>
+                        작품 이름, 작품 설명, 학생 이름 등의 정보를<br>
+                        카테고리에 따라 제공합니다.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footerbox">
+            <h1>Grabition</h1>
+            <div class="ftext">
+                <ul>
+                    <a href="#">
+                        <li>About</li>
+                    </a>
+                    <a href="#">
+                        <li>Contact</li>
+                    </a>
+                    <a href="#">
+                        <li>Support</li>
+                    </a>
+                    <a href="#">
+                        <li>Quick Links</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="ficons">
+                <ul>
+                    <a href="#">
+                        <li><img src="img/f1.png"></li>
+                    </a>
+                    <a href="#">
+                        <li><img src="img/f2.png"></li>
+                    </a>
+                    <a href="#">
+                        <li><img src="img/f3.png"></li>
+                    </a>
+                    <a href="#">
+                        <li><img src="img/f4.png"></li>
+                    </a>
+                    <a href="#">
+                        <li><img src="img/f5.png"></li>
+                    </a>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>©Copyright.All rights reserved.</p>
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Works</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Martel:wght@300;400&family=Noto+Sans+KR:wght@100;300;400;700&family=Orbitron&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans KR', sans-serif;
+            scroll-behavior: smooth;
+        }
+        :root{
+            --main-color:#00042B;
+            --text-color:#5B5B5B;
+        }
+        /* 헤더 */
+        header {
+            /* background-color: burlywood; */
+            display: flex;
+            height: 100px;
+            justify-content: space-between;
+            flex: 1;
+            align-items: center;
+            padding: 0px 160px 0px 160px;
+        }
+        header a .logo{
+            font-family: 'Orbitron', sans-serif;
+            font-size: 36px;
+            color: var(--main-color);
+        }
+        header a{
+            text-decoration: none;
+        }
+        .list{
+            display: flex;
+            gap: 72px;
+        }
+        .list a{
+            list-style: none;
+            text-decoration: none;
+            color: #6F6F6F;
+            font-size: 20px;
+            transition: 0.6s all ease;
+        }
+        .list a:hover{
+            color: var(--main-color);
+        }
+        .lan{
+            display: flex;
+            gap: 36px;
+        }
+        .lan a{
+            list-style: none;
+            text-decoration: none;
+            font-size: 18px;
+            color: var(--text-color);
+        }
+        .lan a:last-child{
+            color: #989898;
+        }
+        .lan a:last-child:hover{
+            color: var(--text-color);
+        }
+    
+        /* 배너 */
+        #banner{
+            width: 100%;
+            height: 640px;
+        }
+        #banner img{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .bannertext{
+            margin-left: 240px;
+            color: white;
+            font-weight: 100;
+            text-align: center;
+        }
+        .bannertext h1{
+            position:absolute;
+            transform: translate(-50%, 0%);
+            font-family: 'Martel', serif;
+            top: 212px;
+            left: 50%;
+            line-height: 68px;
+            font-size: 48px;
+            font-weight: 300;
+        }
+        .bannertext h2{
+            position:absolute;
+            top: 368px;
+            left: 50%;
+            font-size: 18px;
+            line-height: 32px;
+            font-weight: 200;
+            transform: translate(-50%, 0%);
+        }
+        .bannertext p{
+            position: absolute;
+            top: 560px;
+            left: 50%;
+            font-size: 18px;
+            line-height: 32px;
+            font-weight: 200;
+            transform: translate(-50%, 0%);
+        }
+
+        /* 년도선택 */
+        #year ul{
+            display: flex;
+            margin-top: 80px;
+            margin-bottom: 80px;
+            justify-content: center;
+            gap: 80px;
+        }
+        #year ul a{
+            text-decoration: none;
+            list-style: none;
+            font-size: 24px;
+            line-height: 36px;
+            color: var(--text-color);
+            font-weight: 600;
+            padding: 13px 44px;
+            border: 1px solid var(--text-color);
+            border-radius: 32px;
+            transition: 0.6s all ease;
+        }
+        #year ul a:hover{
+            background-color: var(--main-color);
+            color: white;
+        }
+        /* 2021best */
+        #best2021{
+            background-color: #F9F9F9;
+            height: 1584px;
+        }
+        .bwimgs{
+            width: 1440px;
+            height: 980px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 200PX;
+            margin-bottom: 200PX;
+        }
+        .bwimgbox1{
+            width: 100%;
+            height: 480px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .bwimgbox2{
+            width: 100%;
+            height: 480px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            position: relative;
+            margin-top: 20px;
+        }
+        .bwimgs .bwimg1 img{
+            height: 480px;
+            width: 940px;
+        }
+        .bwimgs .bwimg2 img{
+            height: 480px;
+            width: 480px;
+        }
+        .bwimgs .bwimg3 img{
+            height: 480px;
+            width: 480px;
+            position: relative;
+        }
+        .bwimgs .bwimg4 img{
+            height: 480px;
+            width: 940px;
+        }
+        .text2021 h1{
+            font-size: 32px;
+            color: var(--main-color);
+            text-align: center;
+            padding-top: 160px;
+        }
+        .bwhover1:hover{
+            opacity: 1;
+            box-shadow: 0 0 13px 1px rgb(77, 77, 77);
+        }
+        .bwhover2:hover{
+            opacity: 1;
+            box-shadow: 0 0 13px 1px rgb(77, 77, 77);
+        }
+        .bwhover3:hover{
+            opacity: 1;
+            box-shadow: 0 0 13px 1px rgb(77, 77, 77);
+        }
+        .bwhover4:hover{
+            opacity: 1;
+            box-shadow: 0 0 13px 1px rgb(77, 77, 77);
+        }
+        .bwhover1{
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.6);
+            top: 0;
+            left: 0;
+            width: 940px;
+            height: 480px;
+            padding: 80px;
+            opacity: 0;
+            transition: 0.6s all ease;
+        }
+        .bwhover2{
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.6);
+            top: 0;
+            left: 600;
+            width: 480px;
+            height: 480px;
+            padding: 80px;
+            opacity: 0;
+            transition: 0.6s all ease;
+        }
+        .bwhover3{
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            width: 480px;
+            height: 480px;
+            padding: 80px;
+            transition: 0.6s all ease;
+            top: 0;
+        }
+        .bwhover4{
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            width: 940px;
+            height: 480px;
+            padding: 80px;
+            transition: 0.6s all ease;
+            top: 0;
+        }
+        .bwhovertext{
+            flex-direction: column;
+            text-align: left;
+            color: white;
+        }
+        .bwhovertext p{
+            font-size: 20px;
+            line-height: 36px;
+            font-weight: 100;
+        }
+        .bwhovertext h2{
+            font-size: 20px;
+            line-height: 36px;
+            margin-top: 160px;
+            margin-bottom: 12px;
+            font-weight: 100;
+        }
+        .bwhovertext h1{
+            font-size: 36px;
+            line-height: 44px;
+            font-weight: 600;
+        }
+        .text2021 hr{
+            height: 0.6px;
+            color: var(--main-color);
+            border: 0;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 36px;
+            margin-bottom: 36px;
+        }
+        .text2021 ul{
+            display: flex;
+            list-style: none;
+            gap: 72px;
+            justify-content: center;
+            margin-right: auto;
+            margin-left: auto;
+            margin-bottom: 100px;
+        }
+        .text2021 ul a{
+            text-decoration: none;
+            color: #989898;
+            font-size: 20px;
+            line-height: 36px;
+            font-weight: 500;
+            transition: 0.6s all ease;
+        }
+        .text2021 ul a:nth-child(1){
+            color: var(--main-color);
+            font-weight: 600;
+        }
+        .text2021 ul a:hover{
+            color: var(--main-color);
+            font-weight: 600;
+        }
+
+        /* 2020BEST */
+        .text2020 ul a:hover{
+            color: var(--main-color);
+            font-weight: 600;
+        }
+        .text2020 h1{
+            font-size: 32px;
+            color: var(--main-color);
+            text-align: center;
+            padding-top: 160px;
+        }
+        #best2020{
+            height: 1584px;
+            background-color: white;
+        }
+        .text2020 hr{
+            height: 0.6px;
+            color: var(--main-color);
+            border: 0;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 36px;
+            margin-bottom: 36px;
+        }
+        .text2020 ul{
+            display: flex;
+            list-style: none;
+            gap: 72px;
+            justify-content: center;
+            margin-right: auto;
+            margin-left: auto;
+            margin-bottom: 100px;
+        }
+        .text2020 ul a{
+            text-decoration: none;
+            color: #989898;
+            font-size: 20px;
+            line-height: 36px;
+            font-weight: 500;
+            transition: 0.6s all ease;
+        }
+        .text2020 ul a:nth-child(1){
+            color: var(--main-color)!important;
+            font-weight: 600;
+        }
+        
+        /* 2019BEST */
+        .text2019 ul a:hover{
+            color: var(--main-color);
+            font-weight: 600;
+        }
+        .text2019 h1{
+            font-size: 32px;
+            color: var(--main-color);
+            text-align: center;
+            padding-top: 160px;
+        }
+        #best2019{
+            height: 1584px;
+            background-color: #F9F9F9;
+        }
+        .text2019 hr{
+            height: 0.6px;
+            color: var(--main-color);
+            border: 0;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 36px;
+            margin-bottom: 36px;
+        }
+        .text2019 ul{
+            display: flex;
+            list-style: none;
+            gap: 72px;
+            justify-content: center;
+            margin-right: auto;
+            margin-left: auto;
+            margin-bottom: 100px;
+        }
+        .text2019 ul a{
+            text-decoration: none;
+            color: #989898;
+            font-size: 20px;
+            line-height: 36px;
+            font-weight: 500;
+            transition: 0.6s all ease;
+        }
+        .text2019 ul a:nth-child(1){
+            color: var(--main-color)!important;
+            font-weight: 600;
+        }
+
+         /* 푸터 */
+         footer{
+            background-color: #3D3D3D;
+        }
+        .footerbox{
+            padding: 60px 0px 60px 0px;
+            text-align: center;
+            color: white;
+        }
+        .footerbox h1{
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
+            font-weight: 100;
+            margin-bottom: 28px;
+        }
+        .ftext ul{
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+        }
+        .ftext ul a{
+            text-decoration: none;
+        }
+        .ftext ul a li{
+            list-style: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 100;
+        }
+        .ficons ul{
+            margin-top: 36px;
+            margin-bottom: 28px;
+            display: flex;
+            gap: 36px;
+            justify-content: center;
+        }
+        .ficons ul a{
+            text-decoration: none;
+        }
+        .ficons ul a li{
+            list-style: none;
+        }
+        .copyright p{
+            font-size: 14px;
+            font-weight: 100;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <h1 class="logo">Grabition</h1>
+        </a>
+        <ul class="list">
+            <a href="progress.html"><li>IN PROGRESS</li></a>
+            <a href="about.html"><li>ABOUT</li></a>
+            <a href="works.html"><li>WORKS</li></a>
+            <a href="schedule.html"><li>SCHEDULE</li></a>
+        </ul>
+        <ul class="lan">
+            <a href="#"><li>KOR</li></a>
+            <a href="#"><li>&#124;</li></a>
+            <a href="#"><li>ENG</li></a>
+        </ul>
+    </header>
+    
+    <div id="banner">
+            <img src="img/39.png">
+            <div class="bannertext">
+                <h1>Outstanding Graduation<BR>
+                    Exhibition Works by Year</h1>
+                <h2>연도별 졸업 전시 우수 작품</h2>
+                <p>2021년부터 년도별 각 학교 우수작을 소개합니다.<BR>
+                    작품 이름, 작품 설명, 학생 이름 등의 정보를 카테고리에 따라 제공합니다.</p>
+            </div>
+    </div>
+
+    <div id="year">
+        <ul>
+            <a href="#2021">
+                <li>2021</li>
+            </a>
+            <a href="#2020">
+                <li>2020</li>
+            </a>
+            <a href="#2019">
+                <li>2019</li>
+            </a>
+        </ul>
+    </div>
+    <a name="2021"></a>
+    <div id="best2021">
+            <div class="text2021">
+                <h1>2021 Best Works</h1>
+                <hr width="60px" color="#00042B">
+                <ul>
+                    <a href="#">
+                        <li>시각</li>
+                    </a>
+                    <a href="#">
+                        <li>산업</li>
+                    </a>
+                    <a href="#">
+                        <li>공예</li>
+                    </a>
+                    <a href="#">
+                        <li>순수미술</li>
+                    </a>
+                    <a href="#">
+                        <li>패션</li>
+                    </a>
+                    <a href="#">
+                        <li>무대</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="img2021">
+                <div class="bwimgs">
+                    <div class="bwimgbox1">
+                        <div class="bwimg1">
+                            <a href="#">
+                                <img src="img/07.png">
+                                <div class="bwhover1">
+                                    <div class="bwhovertext">
+                                        <div class="bwhoverup">
+                                            <p>경희대<br>시각디자인과</p>
+                                        </div>
+                                        <div class="bwhoverdown">
+                                            <h2>변규리 Kyuri Byeon</h2>
+                                            <h1>CONNEXION</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="bwimg2">
+                            <a href="#">
+                                <img src="img/08.png">
+                                <div class="bwhover2">
+                                    <div class="bwhovertext">
+                                        <div class="bwhoverup">
+                                            <p>한양대<br>엔터테인먼트디자인학과</p>
+                                        </div>
+                                        <div class="bwhoverdown">
+                                            <h2>이령아 Ryeong ah Lee</h2>
+                                            <h1>Dime</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bwimgbox2">
+                        <div class="bwimg3">
+                            <a href="#">
+                                <img src="img/09.png">
+                                <div class="bwhover3">
+                                    <div class="bwhovertext">
+                                        <div class="bwhoverup">
+                                            <p>한국예술종합학교<br>디자인과</p>
+                                        </div>
+                                        <div class="bwhoverdown">
+                                            <h2>박지현 Ji hyeon Park</h2>
+                                            <h1>그로우톡</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="bwimg4">
+                            <a href="#">
+                                <img src="img/10.png">
+                                <div class="bwhover4">
+                                    <div class="bwhovertext">
+                                        <div class="bwhoverup">
+                                            <p>가천대<br>시각디자인과</p>
+                                        </div>
+                                        <div class="bwhoverdown">
+                                            <h2>임승아 Lim Seung Ah</h2>
+                                            <h1>Catch emotion</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+            </div>
+    </div>
+    </div>
+    <a name="2020"></a>
+    <div id="best2020">
+            <div class="text2020">
+                <h1>2020 Best Works</h1>
+                <hr width="60px" color="#00042B">
+                <ul>
+                    <a href="#">
+                        <li>시각</li>
+                    </a>
+                    <a href="#">
+                        <li>산업</li>
+                    </a>
+                    <a href="#">
+                        <li>공예</li>
+                    </a>
+                    <a href="#">
+                        <li>순수미술</li>
+                    </a>
+                    <a href="#">
+                        <li>패션</li>
+                    </a>
+                    <a href="#">
+                        <li>무대</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="img2020">
+                <div class="bwimgs">
+                    <div class="bwimgbox1">
+                        <div class="bwimg1">
+                            <a href="#">
+                                <img src="img/40.png">
+                                <div class="bwhover1">
+                                    <div class="bwhovertext">
+                                        <div class="bwhoverup">
+                                            <p>연세대<br>브랜드디자인과</p>
+                                        </div>
+                                        <div class="bwhoverdown">
+                                            <h2>이규빈 Kyubin Lee</h2>
+                                            <h1>BLACK</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="bwimg2">
+                            <a href="#">
+                                <img src="img/41.png">
+                                <div class="bwhover2">
+                                    <div class="bwhovertext">
+                                        <div class="bwhoverup">
+                                            <p>서울대<br>3D시각디자인과</p>
+                                        </div>
+                                        <div class="bwhoverdown">
+                                            <h2>송지민 Jimin Song</h2>
+                                            <h1>3DD</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bwimgbox2">
+                        <div class="bwimg3">
+                            <a href="#">
+                                <img src="img/42.png">
+                                <div class="bwhover3">
+                                    <div class="bwhovertext">
+                                        <div class="bwhoverup">
+                                            <p>고려대<br>미디어디자인과</p>
+                                        </div>
+                                        <div class="bwhoverdown">
+                                            <h2>김예은 Yeeun Kim</h2>
+                                            <h1>Weaport</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="bwimg4">
+                            <a href="#">
+                                <img src="img/43.png">
+                                <div class="bwhover4">
+                                    <div class="bwhovertext">
+                                        <div class="bwhoverup">
+                                            <p>한공대<br>시각디자인과</p>
+                                        </div>
+                                        <div class="bwhoverdown">
+                                            <h2>박지원 Jiwon Park</h2>
+                                            <h1>murmur</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+            </div>
+    </div>
+    </div>
+    <a name="2019"></a>
+    <div id="best2019">
+            <div class="text2019">
+                <h1>2019 Best Works</h1>
+                <hr width="60px" color="#00042B">
+                <ul>
+                    <a href="#">
+                        <li>시각</li>
+                    </a>
+                    <a href="#">
+                        <li>산업</li>
+                    </a>
+                    <a href="#">
+                        <li>공예</li>
+                    </a>
+                    <a href="#">
+                        <li>순수미술</li>
+                    </a>
+                    <a href="#">
+                        <li>패션</li>
+                    </a>
+                    <a href="#">
+                        <li>무대</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="img2019">
+                <div class="bwimgs">
+                    <div class="bwimgbox1">
+                        <div class="bwimg1">
+                            <a href="#">
+                                <img src="img/44.png">
+                                <div class="bwhover1">
+                                    <div class="bwhovertext">
+                                        <div class="bwhoverup">
+                                            <p>중앙대<br>디지털 미디어디자인과</p>
+                                        </div>
+                                        <div class="bwhoverdown">
+                                            <h2>김민지 Minji Kim</h2>
+                                            <h1>Walkwalk</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="bwimg2">
+                            <a href="#">
+                                <img src="img/45.png">
+                                <div class="bwhover2">
+                                    <div class="bwhovertext">
+                                        <div class="bwhoverup">
+                                            <p>이화여대<br>미디어디자인과</p>
+                                        </div>
+                                        <div class="bwhoverdown">
+                                            <h2>송지우 Jiwoo Song</h2>
+                                            <h1>부서진 조각</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bwimgbox2">
+                        <div class="bwimg3">
+                            <a href="#">
+                                <img src="img/46.png">
+                                <div class="bwhover3">
+                                    <div class="bwhovertext">
+                                        <div class="bwhoverup">
+                                            <p>한국예술종합학교<br>디자인과</p>
+                                        </div>
+                                        <div class="bwhoverdown">
+                                            <h2>박지민 Jimin Park</h2>
+                                            <h1>Bakking</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="bwimg4">
+                            <a href="#">
+                                <img src="img/47.png">
+                                <div class="bwhover4">
+                                    <div class="bwhovertext">
+                                        <div class="bwhoverup">
+                                            <p>한성대<br>시각디자인과</p>
+                                        </div>
+                                        <div class="bwhoverdown">
+                                            <h2>김승아 Seung Kim</h2>
+                                            <h1>eat the Seoul</h1>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+            </div>
+    </div>
+    </div>
+    <footer>
+        <div class="footerbox">
+            <h1>Grabition</h1>
+            <div class="ftext">
+                <ul>
+                    <a href="#">
+                        <li>About</li>
+                    </a>
+                    <a href="#">
+                        <li>Contact</li>
+                    </a>
+                    <a href="#">
+                        <li>Support</li>
+                    </a>
+                    <a href="#">
+                        <li>Quick Links</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="ficons">
+                <ul>
+                    <a href="#">
+                        <li><img src="img/f1.png"></li>
+                    </a>
+                    <a href="#">
+                        <li><img src="img/f2.png"></li>
+                    </a>
+                    <a href="#">
+                        <li><img src="img/f3.png"></li>
+                    </a>
+                    <a href="#">
+                        <li><img src="img/f4.png"></li>
+                    </a>
+                    <a href="#">
+                        <li><img src="img/f5.png"></li>
+                    </a>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>©Copyright.All rights reserved.</p>
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Martel:wght@300;400&family=Noto+Sans+KR:wght@100;300;400;700&family=Orbitron&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        :root{
+            --main-color:#00042B;
+            --text-color:#5B5B5B;
+        }
+        /* 헤더 */
+        header {
+            display: flex;
+            height: 100px;
+            justify-content: space-between;
+            flex: 1;
+            align-items: center;
+            padding: 0px 160px 0px 160px;
+        }
+        header a .logo{
+            font-family: 'Orbitron', sans-serif;
+            font-size: 36px;
+            color: var(--main-color);
+        }
+        header a{
+            text-decoration: none;
+        }
+        .list{
+            display: flex;
+            gap: 72px;
+        }
+        .list a{
+            list-style: none;
+            text-decoration: none;
+            color: #6F6F6F;
+            font-size: 20px;
+            transition: 0.6s all ease;
+        }
+        .list a:hover{
+            color: var(--main-color);
+        }
+        .lan{
+            display: flex;
+            gap: 36px;
+        }
+        .lan a{
+            list-style: none;
+            text-decoration: none;
+            font-size: 18px;
+            color: var(--text-color);
+        }
+        .lan a:last-child{
+            color: #989898;
+        }
+        .lan a:last-child:hover{
+            color: var(--text-color);
+        }
+    
+        /* 배너 */
+        #banner{
+            width: 100%;
+            height: 640px;
+        }
+        #banner img{
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .bannertext{
+            margin-left: 240px;
+            color: white;
+            font-weight: 100;
+            text-align: center;
+        }
+        .bannertext h1{
+            position:absolute;
+            transform: translate(-50%, 0%);
+            font-family: 'Martel', serif;
+            top: 212px;
+            left: 50%;
+            line-height: 68px;
+            font-size: 48px;
+            font-weight: 300;
+        }
+        .bannertext h2{
+            position:absolute;
+            top: 368px;
+            left: 50%;
+            font-size: 18px;
+            line-height: 32px;
+            font-weight: 200;
+            transform: translate(-50%, 0%);
+        }
+        .bannertext p{
+            position: absolute;
+            top: 560px;
+            left: 50%;
+            font-size: 18px;
+            line-height: 32px;
+            font-weight: 200;
+            transform: translate(-50%, 0%);
+        }
+
+        /* upcoming */
+        .upitems{
+            display: flex;
+            justify-content: space-between;
+        }
+        .upitems a{
+            text-decoration: none;
+        }
+        .upimg{
+            position: relative;
+            margin-bottom: 36px;
+            height: 480px;
+            width: 364px;
+        }
+        .upimg img{
+            width: 284px;
+            height: 400px;
+            position: absolute;
+        }
+        .updown{
+            filter: brightness(50%);
+            transition: 0.8s all linear;
+            left: 0;
+            top: 0;
+        }
+        .uphover{
+            top: 80px;
+            left: 80px;
+            transition: all 0.8s linear;
+        }
+        .upimg:hover .updown{
+            filter: brightness(100%);
+            z-index:1;
+        }
+        .upimg:hover .uphover{
+            filter: brightness(50%);
+            z-index:0;
+        }
+        .uptext h1{
+            font-size: 32px;
+            line-height: 36px;
+            color: var(--main-color);
+            margin-top: 160px;
+            margin-bottom: 100px;
+            text-align: left;
+        }
+        .upbox{
+            margin-left: 240px;
+            margin-right: 240px;
+        }
+        .upitem{
+            text-align: center;
+            margin-bottom: 100px;
+        }
+        .upitem h2{
+            font-size: 22px;
+            line-height: 36px;
+            color: var(--main-color);
+            font-weight: 600;
+        }
+        .upitem p{
+            font-size: 16px;
+            line-height: 24px;
+            color: var(--text-color);
+            margin-top: 10px;
+            font-weight: 200;
+        }
+        .upmore {
+            display: inline-block;
+            border: 1px var(--text-color) solid;
+            margin-bottom: 160px;
+        }
+        .upmore a{
+            display: flex;
+            color: var(--text-color);
+            text-decoration: none;
+            align-items: center;
+            padding: 12px 20px;
+            font-size: 16px;
+            line-height: 36px;
+        }
+        .upmore img{
+            width: 20px;
+            height: 20px;
+            margin-left: 8px;
+        }
+        #upcoming{
+            text-align: center;
+        }
+        #nextmonth{
+            background-color: #F9F9F9;
+            text-align: center;
+        }
+        .nmtext h1{
+            font-size: 32px;
+            line-height: 36px;
+            color: var(--main-color);
+            padding-top: 160px;
+            margin-bottom: 100px;
+            text-align: left;
+        }
+
+        /* 푸터 */
+        footer{
+            background-color: #3D3D3D;
+        }
+        .footerbox{
+            padding: 60px 0px 60px 0px;
+            text-align: center;
+            color: white;
+        }
+        .footerbox h1{
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
+            font-weight: 100;
+            margin-bottom: 28px;
+        }
+        .ftext ul{
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+        }
+        .ftext ul a{
+            text-decoration: none;
+        }
+        .ftext ul a li{
+            list-style: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 100;
+        }
+        .ficons ul{
+            margin-top: 36px;
+            margin-bottom: 28px;
+            display: flex;
+            gap: 36px;
+            justify-content: center;
+        }
+        .ficons ul a{
+            text-decoration: none;
+        }
+        .ficons ul a li{
+            list-style: none;
+        }
+        .copyright p{
+            font-size: 14px;
+            font-weight: 100;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <h1 class="logo">Grabition</h1>
+        </a>
+        <ul class="list">
+            <a href="progress.html"><li>IN PROGRESS</li></a>
+            <a href="about.html"><li>ABOUT</li></a>
+            <a href="works.html"><li>WORKS</li></a>
+            <a href="schedule.html"><li>SCHEDULE</li></a>
+        </ul>
+        <ul class="lan">
+            <a href="#"><li>KOR</li></a>
+            <a href="#"><li>&#124;</li></a>
+            <a href="#"><li>ENG</li></a>
+        </ul>
+    </header>
+    
+    <div id="banner">
+            <img src="img/48.png">
+            <div class="bannertext">
+                <h1>Graduation Exhibition<br>
+                    Scheduled</h1>
+                <h2>졸업 전시회 예정 학교</h2>
+                <p>앞으로 예정된 졸업 전시회 일정을 소개합니다.<br>
+                    졸어 전시 예정 날짜, 장소 등의 정보를 제공합니다.</p>
+            </div>
+    </div>
+
+    <div id="upcoming">
+        <div class="upbox">
+            <div class="uptext">
+                <h1>Upcoming Exhibition</h1>
+            </div>
+            <div class="upitems">
+                <a href="#">
+                    <div class="upitem">
+                        <div class="upimg">
+                            <img src="img/49.png" class="updown">
+                            <img src="img/50.png" class="uphover">
+                        </div>
+                        <div class="upinfo">
+                            <h2>? = !</h2>
+                            <p>경희대학교 미술대학</p>
+                            <p>2022.12.12 (월) - 2022.12.26 (화)</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="upitem">
+                        <div class="upimg">
+                            <img src="img/51.png" class="updown">
+                            <img src="img/52.png" class="uphover">
+                        </div>
+                        <div class="upinfo">
+                            <h2>XLINE : 무한으로 펼쳐지다</h2>
+                            <p>한양대학교 서피스인테리어디자인학과</p>
+                            <p>2022.11.30 (수) - 2022.12.04 (일)</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="upitem">
+                        <div class="upimg">
+                            <img src="img/53.png" class="updown">
+                            <img src="img/54.png" class="uphover">
+                        </div>
+                        <div class="upinfo">
+                            <h2>SPECTRUM</h2>
+                            <p>선문대학교 시각디자인학과</p>
+                            <p>2022.12.18 (금) - 2022.12.22 (화)</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="upmore">
+                <a href="works.html">
+                    <p>VIEW MORE</p>
+                    <img src="img/more.png">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="nextmonth">
+        <div class="upbox">
+            <div class="nmtext">
+                <h1>Upcoming Exhibition</h1>
+            </div>
+            <div class="upitems">
+                <a href="#">
+                    <div class="upitem">
+                        <div class="upimg">
+                            <img src="img/55.png" class="updown">
+                            <img src="img/56.png" class="uphover">
+                        </div>
+                        <div class="upinfo">
+                            <h2>SNUFA 2022</h2>
+                            <p>서울대학교 서양화과</p>
+                            <p>2022.12.08 (목) - 2022.12.11 (일)</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="upitem">
+                        <div class="upimg">
+                            <img src="img/57.png" class="updown">
+                            <img src="img/58.png" class="uphover">
+                        </div>
+                        <div class="upinfo">
+                            <h2>PLAYGROUND</h2>
+                            <p>경동대학교 디자인학과</p>
+                            <p>2022.12.03 (토) - 2022.12.07 (수)</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="upitem">
+                        <div class="upimg">
+                            <img src="img/59.png" class="updown">
+                            <img src="img/60.png" class="uphover">
+                        </div>
+                        <div class="upinfo">
+                            <h2>Epilogue_Prologue</h2>
+                            <p>대구대학교 현대미술전공</p>
+                            <p>2022.12.13 (화) - 2022.12.17 (토)</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="upmore">
+                <a href="works.html">
+                    <p>VIEW MORE</p>
+                    <img src="img/more.png">
+                </a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footerbox">
+            <h1>Grabition</h1>
+            <div class="ftext">
+                <ul>
+                    <a href="#">
+                        <li>About</li>
+                    </a>
+                    <a href="#">
+                        <li>Contact</li>
+                    </a>
+                    <a href="#">
+                        <li>Support</li>
+                    </a>
+                    <a href="#">
+                        <li>Quick Links</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="ficons">
+                <ul>
+                    <a href="#">
+                        <li><img src="img/f1.png"></li>
+                    </a>
+                    <a href="#">
+                        <li><img src="img/f2.png"></li>
+                    </a>
+                    <a href="#">
+                        <li><img src="img/f3.png"></li>
+                    </a>
+                    <a href="#">
+                        <li><img src="img/f4.png"></li>
+                    </a>
+                    <a href="#">
+                        <li><img src="img/f5.png"></li>
+                    </a>
+                </ul>
+            </div>
+            <div class="copyright">
+                <p>©Copyright.All rights reserved.</p>
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>
